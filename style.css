@@ -103,6 +103,7 @@ h2, h3 {
     margin-bottom: 1.5em;
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Align left for section headers */
     gap: 10px;
     letter-spacing: 0;
 }
@@ -121,6 +122,80 @@ label {
     color: #424242 !important;
     margin-bottom: 0.3em !important;
 }
+
+/* --- NEW: General Input Field Styling (Apply everywhere input is possible) --- */
+
+/* Basic styling for all common Streamlit input fields */
+div[data-testid="stTextInput"] input,
+div[data-testid="stNumberInput"] input,
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stSelectbox"] div[data-baseweb="select"] div[role="button"], /* Selectbox display */
+div[data-testid="stMultiSelect"] div[data-baseweb="select"] div[role="button"], /* Multiselect display */
+div[data-testid="stDateInput"] input,
+div[data-testid="stTimeInput"] input {
+    background-color: #ffffff !important; /* White background */
+    color: #212121 !important; /* Black text */
+    border: 1px solid #bdbdbd !important; /* Light grey border */
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+    box-shadow: none !important; /* Ensure no shadows interfere */
+}
+
+/* Styling for the placeholder text within input fields */
+div[data-testid="stTextInput"] input::placeholder,
+div[data-testid="stNumberInput"] input::placeholder,
+div[data-testid="stTextArea"] textarea::placeholder,
+div[data-testid="stDateInput"] input::placeholder,
+div[data-testid="stTimeInput"] input::placeholder {
+    color: #9e9e9e !important; /* Lighter grey for placeholder */
+}
+
+/* Ensure the background of the dropdown menu itself (for selectbox/multiselect) is white */
+/* This targets the actual pop-up list that appears */
+div[data-baseweb="popover"] {
+    background-color: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+}
+
+/* Ensure individual options within the dropdown menu are white with black text */
+div[data-baseweb="popover"] ul li {
+    color: #212121 !important; /* Black text for options */
+    background-color: #ffffff !important; /* White background for options */
+    font-family: 'Roboto', sans-serif !important; /* Consistent font */
+    padding: 8px 15px !important;
+}
+
+/* Hover state for dropdown options */
+div[data-baseweb="popover"] ul li:hover {
+    background-color: #f0f0f0 !important; /* Slightly grey on hover */
+    color: #212121 !important;
+}
+
+/* Selected option in dropdowns (e.g., in st.selectbox or st.multiselect list) */
+div[data-baseweb="popover"] ul li[aria-selected="true"] {
+    background-color: #e3f2fd !important; /* Light blue for selected item */
+    color: #1976D2 !important; /* Strong blue text for selected item */
+}
+
+/* Styling for selected tags displayed in multiselect input box */
+div[data-testid="stMultiSelect"] span.st-cq { /* selected items within the input box */
+    background-color: #64B5F6 !important; /* Lighter Blue for selected tags */
+    color: white !important;
+    border-color: #42A5F5 !important;
+    border-radius: 3px;
+    margin: 2px !important;
+    padding: 3px 7px !important;
+}
+
+/* For radio buttons and checkboxes (the text next to them) */
+.stRadio > label p,
+.stCheckbox > label p {
+    color: #212121 !important; /* Black text for options */
+}
+/* --- END NEW: General Input Field Styling --- */
+
 
 /* Buttons (Main Content) */
 .stButton > button {
@@ -278,49 +353,3 @@ label {
 .ai-message b {
     color: #388E3C; /* Strong green for "AI Advisor" */
 }
-
-/* --- FIX FOR DROPDOWN BACKGROUND ON MOBILE --- */
-/* Override for multiselect/dropdowns in main content area */
-.stMultiSelect > div[role="listbox"],
-.stMultiSelect > div[data-baseweb="select"] {
-    background-color: #ffffff !important; /* White background for dropdowns */
-    color: #212121 !important; /* Dark text */
-    border: 1px solid #e0e0e0 !important; /* Light border */
-}
-
-/* For individual options within the dropdown */
-.stMultiSelect > div[role="listbox"] .st-bh,
-.stMultiSelect > div[data-baseweb="select"] .st-bh {
-    background-color: #ffffff !important;
-    color: #212121 !important;
-}
-
-/* Hover/active state for dropdown options */
-.stMultiSelect > div[role="listbox"] .st-bh:hover,
-.stMultiSelect > div[data-baseweb="select"] .st-bh:hover {
-    background-color: #f0f0f0 !important; /* Slightly darker on hover */
-    color: #212121 !important;
-}
-
-/* The input field for search/select symptoms itself in the main content */
-.stMultiSelect .st-cf,
-.stTextInput > div > div > input {
-    background-color: #ffffff !important;
-    color: #212121 !important;
-    border: 1px solid #e0e0e0 !important;
-}
-
-/* Placeholder text color for the input fields */
-.stMultiSelect .st-cf::placeholder,
-.stTextInput > div > div > input::placeholder {
-    color: #9e9e9e !important; /* Lighter grey for placeholder */
-}
-
-/* Text color of selected items in the main content multiselect */
-.stMultiSelect span.st-cq {
-    background-color: #64B5F6 !important; /* Lighter Blue for selected items */
-    color: white !important;
-    border-color: #42A5F5 !important;
-    border-radius: 3px;
-}
-/* --- END FIX --- */
