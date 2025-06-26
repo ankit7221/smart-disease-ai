@@ -1,0 +1,280 @@
+/* Google Fonts - New Theme */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+/* Global Styles */
+html, body, [class*="st-"] {
+    font-family: 'Roboto', sans-serif;
+    color: #212121; /* Dark charcoal text */
+}
+
+.stApp {
+    background-color: #f5f5f5; /* Very light gray */
+    padding: 20px;
+    animation: none; /* No global fade-in for this theme */
+}
+
+/* Specific Streamlit Sidebar Styling (might be fragile across Streamlit versions) */
+div[data-testid="stSidebarContent"] {
+    background-color: #282a36 !important; /* Dark editor background */
+    color: #f8f8f2 !important; /* Light text for sidebar */
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 30px; /* Add some space at the top of the sidebar */
+}
+
+/* Sidebar headers/text within the dark theme */
+div[data-testid="stSidebarContent"] h1,
+div[data-testid="stSidebarContent"] h2,
+div[data-testid="stSidebarContent"] h3,
+div[data-testid="stSidebarContent"] label,
+div[data-testid="stSidebarContent"] p {
+    color: #f8f8f2 !important; /* White text for all sidebar elements */
+    font-family: 'Roboto Mono', monospace !important;
+}
+/* Adjust specific label colors within sidebar, like multiselect label */
+div[data-testid="stSidebarContent"] .stMultiSelect label {
+    color: #50fa7b !important; /* Green accent for specific labels */
+}
+
+/* Sidebar multiselect dropdown area background */
+div[data-testid="stSidebarContent"] .stMultiSelect {
+    background-color: #383a42 !important; /* Slightly lighter dark for multiselect box */
+    border-radius: 4px;
+    padding: 5px;
+}
+/* Selected items within multiselect */
+div[data-testid="stSidebarContent"] .stMultiSelect span.st-cq { /* selected items */
+    background-color: #6272a4 !important; /* Purple accent for selected items */
+    color: #f8f8f2 !important;
+    border-color: #6272a4 !important;
+    border-radius: 3px;
+}
+
+/* Sidebar Button Styling */
+div[data-testid="stSidebarContent"] .stButton > button {
+    background-color: #42A5F5 !important; /* Blue button */
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 15px !important;
+    margin-top: 15px !important;
+    transition: background-color 0.2s ease;
+}
+div[data-testid="stSidebarContent"] .stButton > button:hover {
+    background-color: #2196F3 !important; /* Darker blue on hover */
+}
+
+
+/* Main Content Header Styles */
+.main-header {
+    font-family: 'Roboto Mono', monospace; /* Monospace for main title */
+    font-size: 3.5em;
+    color: #42A5F5; /* Vibrant Blue */
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    text-shadow: none; /* No shadows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    letter-spacing: 0;
+}
+.subheader {
+    font-size: 1.2em;
+    color: #616161; /* Muted grey */
+    text-align: center;
+    margin-bottom: 2em;
+    font-weight: 300;
+    line-height: 1.4;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Headers */
+h2, h3 {
+    font-family: 'Roboto Mono', monospace;
+    color: #42A5F5; /* Blue for section titles */
+    font-weight: 700;
+    margin-top: 2em;
+    border-bottom: 1px solid #e0e0e0; /* Thin border */
+    padding-bottom: 8px;
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0;
+}
+h4 {
+    font-family: 'Roboto Mono', monospace;
+    color: #212121;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+/* Labels */
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em !important;
+    font-weight: 500 !important;
+    color: #424242 !important;
+    margin-bottom: 0.3em !important;
+}
+
+/* Buttons (Main Content) */
+.stButton > button {
+    background-color: #64B5F6; /* Lighter Blue for buttons */
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 4px; /* Square corners */
+    border: 1px solid #42A5F5; /* Blue border */
+    cursor: pointer;
+    box-shadow: none; /* No shadows */
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    font-weight: 500;
+    margin-top: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: none; /* Normal case */
+    letter-spacing: normal;
+}
+.stButton > button:hover {
+    background-color: #42A5F5; /* Darker blue on hover */
+    border-color: #2196F3;
+    transform: none; /* No lift */
+}
+
+/* Prediction Boxes / Cards */
+.prediction-box {
+    background-color: #ededed; /* Light grey for blocks */
+    border-left: 4px solid #42A5F5; /* Blue accent */
+    padding: 18px;
+    margin-top: 1em;
+    border-radius: 4px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background-color 0.15s ease-in-out;
+}
+.prediction-box:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    transform: none;
+    box-shadow: none;
+}
+.prediction-box p {
+    font-size: 0.95em;
+    color: #333;
+    margin: 0;
+}
+.prediction-box span {
+    font-weight: 600;
+    color: #2196F3;
+}
+
+/* Streamlit Alerts */
+.stAlert {
+    border-radius: 4px;
+    font-size: 0.9em;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: none;
+    border: none; /* Remove default alert borders */
+    border-left: 4px solid; /* Add left border for color indication */
+}
+.stAlert.info { background-color: #e3f2fd; color: #1565C0; border-color: #1976D2; }
+.stAlert.success { background-color: #e8f5e9; color: #2E7D32; border-color: #388E3C; }
+.stAlert.warning { background-color: #fff3e0; color: #EF6C00; border-color: #FFA000; }
+.stAlert.error { background-color: #ffebee; color: #C62828; border-color: #D32F2F; }
+.stAlert i { font-size: 1.2em; }
+
+/* Disclaimer */
+.disclaimer {
+    font-size: 0.75em;
+    color: #757575;
+    margin-top: 25px;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px dashed #bdbdbd;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: none;
+}
+
+/* NEW: Initial AI Response Block Styling */
+.initial-ai-response-box {
+    background-color: #e0f7fa; /* Light cyan background, distinct from chat */
+    border-left: 5px solid #00BCD4; /* Bright cyan accent bar */
+    padding: 20px;
+    margin-top: 2em; /* More space above */
+    margin-bottom: 2em; /* More space below */
+    border-radius: 8px; /* Slightly rounded for a 'card' feel */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    font-size: 1.0em;
+    line-height: 1.6;
+    color: #37474F; /* Darker text */
+}
+.initial-ai-response-box b {
+    color: #00796B; /* Teal for AI Advisor name */
+    font-weight: 700;
+}
+
+/* Chat Specific Styling */
+.chat-container {
+    height: 350px; /* Adjust height as needed */
+    overflow-y: auto;
+    border: 1px solid #e0e0e0; /* Light border */
+    padding: 15px;
+    border-radius: 4px; /* Square corners */
+    background-color: #ffffff; /* White background for chat */
+    margin-bottom: 20px;
+    box-shadow: none; /* No shadow */
+}
+.user-message {
+    background-color: #e3f2fd; /* Very light blue */
+    padding: 12px 15px;
+    border-radius: 4px; /* Square corners */
+    margin-bottom: 10px;
+    text-align: left; /* Keep user message left-aligned for this theme */
+    margin-left: 0; /* No indent */
+    margin-right: 0; /* No indent */
+    box-shadow: none;
+    word-wrap: break-word;
+    font-size: 0.95em;
+    line-height: 1.4;
+    border-left: 3px solid #64B5F6; /* User message accent */
+}
+.ai-message {
+    background-color: #e8f5e9; /* Very light green */
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-align: left; /* AI message also left-aligned */
+    margin-left: 0;
+    margin-right: 0;
+    box-shadow: none;
+    word-wrap: break-word;
+    font-size: 0.95em;
+    line-height: 1.4;
+    border-left: 3px solid #81C784; /* AI message accent */
+}
+.chat-message b { /* Common bold for names */
+    font-weight: 700;
+    margin-right: 5px;
+}
+.user-message b {
+    color: #1976D2; /* Strong blue for "You" */
+}
+.ai-message b {
+    color: #388E3C; /* Strong green for "AI Advisor" */
+}
