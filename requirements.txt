@@ -1,0 +1,13 @@
+streamlit
+streamlit-webrtc
+google-generativeai
+whisper
+pydub
+scikit-learn
+joblib
+pandas
+python-dotenv
+torch
+torchaudio
+googletrans==4.0.0-rc1
+firebase-admin
