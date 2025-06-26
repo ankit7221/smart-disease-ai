@@ -1,6 +1,6 @@
 # Smart Disease & Health AI
 
-![Streamlit App](https://smart-disease-ai-9rtue2ftzeyypmt8k65qvo.streamlit.app/) ## Table of Contents
+![Streamlit App][https://smart-disease-ai-9rtue2ftzeyypmt8k65qvo.streamlit.app/] ## Table of Contents
 
 - [About the Project](#about-the-project)
 - [Features](#features)
